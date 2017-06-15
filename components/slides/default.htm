@@ -1,0 +1,30 @@
+{% set slides = __SELF__.slides %}
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        {% for slide in slides %}
+            {% set active = loop.first ? 'active' : null %}
+        <div class="item {{ active}}" style="background-image: url('{{ slide.image.getPath() }}');width: 100%;">
+            <div class="carousel-caption">
+                <h2 class="upper-title">{{ slide.upper_title }}</h2>
+                <h1 class="middle-title">{{ slide.middle_title }}</h1>
+                <h2 class="lower-title">{{ slide.lower_title }}</h2>
+                <div class="buttons text-center">
+                    <a href="{{ slide.link_one }}" class="btn btn-default slider-button red hvr-fade">{{ slide.link_one_text }}</a>
+                    <a href="{{ slide.link_two }}" class="btn btn-default slider-button blue hvr-fade">{{ slide.link_two_text }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

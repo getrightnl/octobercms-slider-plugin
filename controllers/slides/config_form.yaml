@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Slide
+
+# Model Form Field configuration
+form: $/getright/slider/models/slide/fields.yaml
+
+# Model Class name
+modelClass: GetRight\Slider\Models\Slide
+
+# Default redirect location
+defaultRedirect: getright/slider/slides
+
+# Create page
+create:
+    title: Create Slide
+    redirect: getright/slider/slides/update/:id
+    redirectClose: getright/slider/slides
+
+# Update page
+update:
+    title: Edit Slide
+    redirect: getright/slider/slides
+    redirectClose: getright/slider/slides
+
+# Preview page
+preview:
+    title: Preview Slide

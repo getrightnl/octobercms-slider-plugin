@@ -1,0 +1,33 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+    name:
+        label: Name
+        type: text
+        required: true
+    upper_title:
+        label: Upper caption
+        type: text
+    middle_title:
+        label: Middle caption
+        type: text
+    lower_title:
+        label: Lower caption
+        type: text
+    link_one:
+        label: First link (url)
+        type: text
+    link_two:
+        label: Second link (url)
+        type: text
+    link_one_text:
+        label: Link one text
+        type: text
+    link_two_text:
+        label: Link two text
+        type: text
