@@ -5,7 +5,7 @@
     <div class="carousel-inner" role="listbox">
         {% for slide in slides %}
             {% set active = loop.first ? 'active' : null %}
-        <div class="item {{ active}}" style="background-image: url('{{ slide.image.getPath() }}');background-size: cover;">
+        <div class="item {{ active}}" style="background-image: url('{{ slide.image.getPath() }}');background-size: {{ slide.background_size_mode }};background-position-x: {{ slide.background_position_x }}%;background-position-y:{{ slide.background_position_y }}%;">
             {% if captionEnabled %}
             <div class="carousel-caption">
                 <h2 class="upper-title">{{ slide.upper_title }}</h2>

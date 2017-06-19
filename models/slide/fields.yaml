@@ -35,3 +35,15 @@ fields:
         label: Image
         type: fileupload
         mode: image
+    background_size_mode:
+        label: Background size mode
+        type: dropdown
+        options:
+            cover: 'Cover'
+            contain: 'Contain'
+    background_position_x:
+        label: Background position (X-axis in percentages 0 - 100)
+        type: Number
+    background_position_y:
+        label: Background position (Y-axis in percentages 0 - 100)
+        type: Number

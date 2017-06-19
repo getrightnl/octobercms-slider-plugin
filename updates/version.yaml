@@ -2,8 +2,11 @@
 1.0.2:
     - Create slides table
     - migrations/create_slides_table.php
+    - migrations/add_background_options_columns.php
 1.0.3:
     - Seed slides table
     - seeders/SeedSlidesTable.php
 1.0.4:
     - Added switch to disable buttons and text to be shown/Added backend functionality to upload images/Added Environment check for seeding/Added translation files
+1.0.5:
+    - Added options for background mode (cover, contain) and added background-position-x / y per slide

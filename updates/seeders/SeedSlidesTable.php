@@ -40,6 +40,9 @@ class SeedSlidesTable extends Seeder {
             'link_two'     => url('/#contact'),
             'link_one_text'   => 'About',
             'link_two_text'    => 'Contact',
+            'background_size_mode' => 'contain',
+            'background_position_x' => 30,
+            'background_position_y' => 20
         ] );
 
         $slide->image()->create([

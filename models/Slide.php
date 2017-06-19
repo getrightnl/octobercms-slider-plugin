@@ -1,12 +1,15 @@
 <?php namespace GetRight\Slider\Models;
 
 use Model;
+use October\Rain\Database\Traits\Validation;
 
 /**
  * Slide Model
  */
 class Slide extends Model
 {
+    use Validation;
+
     /**
      * @var string The database table used by the model.
      */
@@ -16,14 +19,17 @@ class Slide extends Model
      * @var array $rules
      */
     public $rules = [
-        'name' => 'required|string|size:75',
-        'upper_title' => 'string|size:75',
-        'middle_title' => 'string|size:75',
-        'lower_title' => 'string|size:75',
+        'name' => 'required|string|max:75',
+        'upper_title' => 'string|max:75',
+        'middle_title' => 'string|max:75',
+        'lower_title' => 'string|max:75',
         'link_one' => 'string',
         'link_two' => 'string',
-        'link_one_text' => 'string|size:55',
-        'link_two_text' => 'string|size:55'
+        'link_one_text' => 'string|max:55',
+        'link_two_text' => 'string|max:55',
+        'background_size_mode' => 'required|string',
+        'background_position_x' => 'required|integer|between:0, 100',
+        'background_position_y' => 'required|integer|between:0, 100'
     ];
 
     /**
