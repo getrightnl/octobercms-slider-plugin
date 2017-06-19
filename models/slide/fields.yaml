@@ -31,3 +31,7 @@ fields:
     link_two_text:
         label: Link two text
         type: text
+    image:
+        label: Image
+        type: fileupload
+        mode: image

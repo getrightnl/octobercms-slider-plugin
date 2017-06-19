@@ -1,10 +1,12 @@
 {% set slides = __SELF__.slides %}
+{% set captionEnabled = __SELF__.captionEnabled %}
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         {% for slide in slides %}
             {% set active = loop.first ? 'active' : null %}
         <div class="item {{ active}}" style="background-image: url('{{ slide.image.getPath() }}');width: 100%;">
+            {% if captionEnabled %}
             <div class="carousel-caption">
                 <h2 class="upper-title">{{ slide.upper_title }}</h2>
                 <h1 class="middle-title">{{ slide.middle_title }}</h1>
@@ -14,6 +16,7 @@
                     <a href="{{ slide.link_two }}" class="btn btn-default slider-button blue hvr-fade">{{ slide.link_two_text }}</a>
                 </div>
             </div>
+            {% endif %}
         </div>
         {% endfor %}
     </div>

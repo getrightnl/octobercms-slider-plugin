@@ -74,6 +74,25 @@ class Plugin extends PluginBase
     }
 
     /**
+     * Register backend settings.
+     *
+     * @return array
+     */
+    public function registerSettings()
+    {
+        return [
+            'getright_slider' => [
+                'label'       => 'getRight Slider',
+                'description' => 'getright.slider::lang.settings_backend.description',
+                'category'    => 'Utilities',
+                'icon'        => 'icon-file-image-o',
+                'class'       => 'GetRight\Slider\Models\Settings',
+                'order'       => 100,
+            ]
+        ];
+    }
+
+    /**
      * Registers back-end navigation items for this plugin.
      *
      * @return array

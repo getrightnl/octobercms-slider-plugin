@@ -5,3 +5,5 @@
 1.0.3:
     - Seed slides table
     - seeders/SeedSlidesTable.php
+1.0.4:
+    - Added switch to disable buttons and text to be shown/Added backend functionality to upload images/Added Environment check for seeding/Added translation files

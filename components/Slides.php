@@ -4,7 +4,7 @@ namespace GetRight\Slider\Components;
 
 use Cms\Classes\ComponentBase;
 use GetRight\Slider\Facades\SliderRepository;
-use GetRight\Slider\Models\Slide;
+use GetRight\Slider\Models\Settings;
 
 /**
  * Class Slides
@@ -17,6 +17,11 @@ class Slides extends ComponentBase
      * @var $slides
      */
     public $slides;
+
+    /**
+     * @var $captionEnabled
+     */
+    public $captionEnabled;
 
     /**
      * Define component details.
@@ -46,6 +51,7 @@ class Slides extends ComponentBase
      */
     public function onRun() {
         $this->slides = $this->getSlides();
+        $this->captionEnabled = Settings::get('caption_enabled', true);
     }
 
     /**

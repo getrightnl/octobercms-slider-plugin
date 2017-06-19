@@ -1,0 +1,10 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    caption_enabled:
+        label: getright.slider::lang.settings_labels.caption_enabled
+        type: switch
+        default: true
+        comment: getright.slider::lang.settings_comments.caption_enabled

@@ -2,6 +2,7 @@
 
 namespace GetRight\Slider\Updates\Seeders;
 
+use Faker\Factory;
 use GetRight\Slider\Models\Slide;
 use Seeder;
 use Model;
@@ -19,7 +20,7 @@ class SeedSlidesTable extends Seeder {
      */
     public function run() {
 
-        if(App::environment() != 'production') return;
+        if(App::environment() != 'dummy') return;
 
         // Check if directory exists else make it.
         if(!file_exists(storage_path('app/media/slides'))){
@@ -28,34 +29,21 @@ class SeedSlidesTable extends Seeder {
 
         Model::unguard();
 
+        $faker = Factory::create();
+
         $slide = Slide::create( [
-            'name'         => 'Eerste slide',
-            'upper_title'  => 'De marktleider in',
-            'middle_title' => 'mini betonpompen',
-            'lower_title'  => 'kleine-betonpompen.nl',
-            'link_one'     => url('/over-ons'),
-            'link_two'     => url('/contact'),
-            'link_one_text'   => 'Over ons',
+            'name'         => 'First slide',
+            'upper_title'  => substr($faker->words(3, true),0,75),
+            'middle_title' => substr($faker->words(2,true),0,75),
+            'lower_title'  => substr($faker->words(1, true),0,75),
+            'link_one'     => url('/#about'),
+            'link_two'     => url('/#contact'),
+            'link_one_text'   => 'About',
             'link_two_text'    => 'Contact',
         ] );
 
         $slide->image()->create([
-            'data' => themes_path('kleine-betonpomp/assets/images/slide.png')
-        ]);
-
-        $slide = Slide::create( [
-            'name'         => 'Eerste slide',
-            'upper_title'  => 'De marktleider in',
-            'middle_title' => 'mini betonpompen',
-            'lower_title'  => 'kleine-betonpompen.nl',
-            'link_one'     => url('/over-ons'),
-            'link_two'     => url('/contact'),
-            'link_one_text'   => 'Over ons',
-            'link_two_text'    => 'Contact',
-        ] );
-
-        $slide->image()->create([
-            'data' => themes_path('kleine-betonpomp/assets/images/slide.png')
+            'data' => themes_path('getright-construction/assets/images/slide.png')
         ]);
     }
 
